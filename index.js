@@ -24,7 +24,10 @@ const writeToFile = (fileName, data) => {
 }
 
 const init = () => {
-
+  inquirer.prompt(questions).then(answers => {
+    console.log('Answers:');
+    console.log(JSON.stringify(answers, null, ' '));
+  });
 }
 
 init();
