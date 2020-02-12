@@ -1,11 +1,17 @@
+const axios = require('axios');
+const inquirer = require('inquirer');
+const fs = require('fs');
+
 const questions = [
 
 ];
 
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) => {
 
 }
 
-function init() {}
+const init = () => {
+
+}
 
 init();
