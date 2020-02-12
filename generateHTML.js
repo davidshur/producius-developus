@@ -170,11 +170,13 @@ const generateHTML = ( data, response ) => {
 </head>
 <body>
   <div class='wrapper'>
-    <div class='row'>
-      <div class='card'>
-        <h1>
-          ${response.data[0].owner.login}
-        </h1>
+    <div class='container'>
+      <div class='row'>
+        <div class='col'>
+          <div class='photo-header'>
+            <img class='photo-header' src='${response.data[0].owner.avatar_url}' alt='Picture of Me!' />
+          </div>
+        </div>
       </div>
     </div>
   </div>
