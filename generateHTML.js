@@ -27,11 +27,7 @@ const colors = {
   }
 };
 
-function generateHTML(data) {
-  axios.get(`https://api.github.com/users/${data.username}/repos?per_page=4`).then(response => {
-    console.log(response.data);
-  });
-
+const generateHTML = data => {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -179,14 +175,14 @@ function generateHTML(data) {
     <div class='row'>
       <div class='card'>
         <h1>
-          ${data.username}
+
         </h1>
       </div>
     </div>
   </div>
 </body>
 </html>
-    `
+  `
 }
 
 module.exports = generateHTML;
