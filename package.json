@@ -1,0 +1,24 @@
+{
+  "name": "producius-developus",
+  "version": "1.0.0",
+  "description": "Creates a PDF Developer Portfolio.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidshur/producius-developus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidshur/producius-developus/issues"
+  },
+  "homepage": "https://github.com/davidshur/producius-developus#readme"
+}
