@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const colors = {
   green: {
     wrapperBackground: "#E6E1C3",
@@ -27,7 +25,7 @@ const colors = {
   }
 };
 
-const generateHTML = data => {
+const generateHTML = ( data, response ) => {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +173,7 @@ const generateHTML = data => {
     <div class='row'>
       <div class='card'>
         <h1>
-
+          ${response.data[0].owner.login}
         </h1>
       </div>
     </div>
