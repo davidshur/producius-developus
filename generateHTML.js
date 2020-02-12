@@ -138,37 +138,32 @@ function generateHTML(data) {
         padding-left: 100px;
         padding-right: 100px;
         }
-
         .row {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          margin-top: 20px;
-          margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
         }
-
         .card {
-          padding: 20px;
-          border-radius: 6px;
-          background-color: ${colors[data.color].headerBackground};
-          color: ${colors[data.color].headerColor};
-          margin: 20px;
+        padding: 20px;
+        border-radius: 6px;
+        background-color: ${colors[data.color].headerBackground};
+        color: ${colors[data.color].headerColor};
+        margin: 20px;
         }
-
         .col {
         flex: 1;
         text-align: center;
         }
-
         a, a:hover {
         text-decoration: none;
         color: inherit;
         font-weight: bold;
         }
-
         @media print {
           body {
-            zoom: .75;
+          zoom: .75;
           }
         }
       </style>
