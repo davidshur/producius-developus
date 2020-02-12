@@ -32,7 +32,7 @@ const writeToFile = (fileName, data) => {
 
 const init = () => {
   inquirer.prompt(questions).then(answers => {
-    writeToFile(`${answers.username}.pdf`, JSON.stringify(answers, null, ' '));
+    writeToFile(`${answers.username}.html`, generateHTML(answers));
   });
 }
 

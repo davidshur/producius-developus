@@ -167,5 +167,20 @@ function generateHTML(data) {
           }
         }
       </style>
+    </head>
+    <body>
+      <div class='wrapper'>
+        <div class='row'>
+          <div class='card'>
+            <h1>
+              ${data.username}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
   `
 }
+
+module.exports = generateHTML;
