@@ -20,7 +20,11 @@ const questions = [
 ];
 
 const writeToFile = (fileName, data) => {
+  fs.writeFile(fileName, data, err => {
+    if (err) throw err;
+    console.log(`The user's PDF has been created and saved!`);
 
+  })
 }
 
 const init = () => {
