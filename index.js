@@ -1,7 +1,10 @@
 const axios = require('axios');
+const pdf = require('html-pdf');
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./generateHTML.js');
+
+const options = {format: 'A4'};
 
 const questions = [
   {
@@ -35,7 +38,11 @@ const writeToFile = (fileName, data, path) => {
 const init = () => {
   inquirer.prompt(questions).then(answers => {
     axios.get(`https://api.github.com/users/${answers.username}`).then(user => {
-      writeToFile(`${answers.username}.html`, generateHTML(answers, user.data));
+      writeToFile(`${answers.username}.html`, generateHTML(answers, user.data), `./${answers.username}.pdf`);
+      pdf.create(generateHTML(answers, user.data), options).toFile(`./${answers.username}.pdf`, function(err, res) {
+        if (err) return console.log(err);
+        console.log(res);
+      });
     });
   });
 }
