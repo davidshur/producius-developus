@@ -32,8 +32,8 @@ const writeToFile = (fileName, data) => {
 
 const init = () => {
   inquirer.prompt(questions).then(answers => {
-    axios.get(`https://api.github.com/users/${answers.username}/repos?per_page=100`).then(response => {
-      writeToFile(`${answers.username}.html`, generateHTML(answers, response));
+    axios.get(`https://api.github.com/users/${answers.username}`).then(user => {
+      writeToFile(`${answers.username}.html`, generateHTML(answers, user.data));
     });
   });
 }

@@ -25,7 +25,7 @@ const colors = {
   }
 };
 
-const generateHTML = ( data, response ) => {
+const generateHTML = ( data, user ) => {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@ const generateHTML = ( data, response ) => {
     padding-top: 100px;
     }
     body {
-    background-color: white;
+    background-color: #E9EDEE;
     -webkit-print-color-adjust: exact !important;
     font-family: 'Cabin', sans-serif;
     }
@@ -138,6 +138,9 @@ const generateHTML = ( data, response ) => {
     padding-left: 100px;
     padding-right: 100px;
     }
+    i {
+      margin-right: 4px;
+    }
     .row {
     display: flex;
     flex-wrap: wrap;
@@ -170,14 +173,54 @@ const generateHTML = ( data, response ) => {
 </head>
 <body>
   <div class='wrapper'>
-    <div class='container'>
+    <div class='photo-header'>
+      <img src='${user.avatar_url}' alt='Picture of Me!' />
+      <h1>${user.name}</h1>
+      <h6>Currently at ${user.company}.</h6>
+      <div class='links-nav'>
+        <a class='nav-link'><i class="fas fa-location-arrow"></i>${user.location}</a>
+        <a class='nav-link' href='${user.html_url}' target='_blank'><i class="fab fa-github"></i>Github</a>
+        <a class='nav-link' href='${user.blog}' target='_blank'><i class="fas fa-blog"></i>Blog</a>
+      </div>
+    </div>
+    <main>
+      <div class='container'>
       <div class='row'>
         <div class='col'>
-          <div class='photo-header'>
-            <img class='photo-header' src='${response.data[0].owner.avatar_url}' alt='Picture of Me!' />
+          <h3>${user.bio}</h3>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <div class='card'>
+            <h4>Public Repositories</h4>
+            <p>${user.public_repos}</p>
+          </div>
+        </div>
+        <div class='col'>
+          <div class='card'>
+            <h4>Followers</h4>
+            <p>${user.followers}</p>
           </div>
         </div>
       </div>
+      <div class='row'>
+        <div class='col'>
+          <div class='card'>
+            <h4>Github Stars</h4>
+            <p>${user.public_gists}</p>
+          </div>
+        </div>
+        <div class='col'>
+          <div class='card'>
+            <h4>Following</h4>
+            <p>${user.following}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <div class='wrapper'>
     </div>
   </div>
 </body>
