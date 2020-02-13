@@ -2,6 +2,9 @@ const axios = require('axios');
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./generateHTML.js');
+const wkhtmltopdf = require('wkhtmltopdf');
+
+const options = {format: 'Letter'};
 
 const questions = [
   {
@@ -23,17 +26,19 @@ const questions = [
   },
 ];
 
-const writeToFile = (fileName, data) => {
+const writeToFile = (fileName, data, path) => {
   fs.writeFile(fileName, data, err => {
-    if (err) throw err;
-    console.log(`The user's PDF has been created and saved!`);
+    if (err) {
+      return console.log(err);
+    }
+    console.log(`The user's HTML has been created and saved!`);
   });
 }
 
 const init = () => {
   inquirer.prompt(questions).then(answers => {
     axios.get(`https://api.github.com/users/${answers.username}`).then(user => {
-      writeToFile(`${answers.username}.html`, generateHTML(answers, user.data));
+      writeToFile(`${answers.username}.html`, generateHTML(answers, user.data), `./${answers.username}.pdf`);
     });
   });
 }

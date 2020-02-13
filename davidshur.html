@@ -1,32 +1,4 @@
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
 
-const generateHTML = ( data, user ) => {
-  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +25,7 @@ const generateHTML = ( data, user ) => {
     height: 100%;
     }
     .wrapper {
-    background-color: ${colors[data.color].wrapperBackground};
+    background-color: #E6E1C3;
     padding-top: 100px;
     }
     body {
@@ -95,8 +67,8 @@ const generateHTML = ( data, user ) => {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: ${colors[data.color].headerBackground};
-    color: ${colors[data.color].headerColor};
+    background-color: #C1C72C;
+    color: black;
     padding: 10px;
     width: 95%;
     border-radius: 6px;
@@ -107,7 +79,7 @@ const generateHTML = ( data, user ) => {
     border-radius: 50%;
     object-fit: cover;
     margin-top: -75px;
-    border: 6px solid ${colors[data.color].photoBorderColor};
+    border: 6px solid #black;
     box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
     }
     .photo-header h1, .photo-header h2 {
@@ -151,8 +123,8 @@ const generateHTML = ( data, user ) => {
     .card {
     padding: 20px;
     border-radius: 6px;
-    background-color: ${colors[data.color].headerBackground};
-    color: ${colors[data.color].headerColor};
+    background-color: #C1C72C;
+    color: black;
     margin: 20px;
     }
     .col {
@@ -174,32 +146,32 @@ const generateHTML = ( data, user ) => {
 <body>
   <div class='wrapper'>
     <div class='photo-header'>
-      <img src='${user.avatar_url}' alt='Picture of Me!' />
-      <h1>${user.name}</h1>
-      <h6>Currently at ${user.company}.</h6>
+      <img src='https://avatars2.githubusercontent.com/u/53355968?v=4' alt='Picture of Me!' />
+      <h1>David</h1>
+      <h6>Currently at Jurne.</h6>
       <div class='links-nav'>
-        <a class='nav-link'><i class="fas fa-location-arrow"></i>${user.location}</a>
-        <a class='nav-link' href='${user.html_url}' target='_blank'><i class="fab fa-github"></i>Github</a>
-        <a class='nav-link' href='${user.blog}' target='_blank'><i class="fas fa-blog"></i>Blog</a>
+        <a class='nav-link'><i class="fas fa-location-arrow"></i>Redmond, WA</a>
+        <a class='nav-link' href='https://github.com/davidshur' target='_blank'><i class="fab fa-github"></i>Github</a>
+        <a class='nav-link' href='https://davidshur.github.io/' target='_blank'><i class="fas fa-blog"></i>Blog</a>
       </div>
     </div>
     <main class='container'>
       <div class='row'>
         <div class='col'>
-          <h3>${user.bio}</h3>
+          <h3>Learning to code!</h3>
         </div>
       </div>
       <div class='row'>
         <div class='col'>
           <div class='card'>
             <h4>Public Repositories</h4>
-            <p>${user.public_repos}</p>
+            <p>12</p>
           </div>
         </div>
         <div class='col'>
           <div class='card'>
             <h4>Followers</h4>
-            <p>${user.followers}</p>
+            <p>6</p>
           </div>
         </div>
       </div>
@@ -207,13 +179,13 @@ const generateHTML = ( data, user ) => {
         <div class='col'>
           <div class='card'>
             <h4>Github Stars</h4>
-            <p>${user.public_gists}</p>
+            <p>0</p>
           </div>
         </div>
         <div class='col'>
           <div class='card'>
             <h4>Following</h4>
-            <p>${user.following}</p>
+            <p>1</p>
           </div>
         </div>
       </div>
@@ -223,7 +195,4 @@ const generateHTML = ( data, user ) => {
   </div>
 </body>
 </html>
-  `
-}
-
-module.exports = generateHTML;
+  
