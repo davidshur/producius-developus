@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./generateHTML.js');
 
-const options = {format: 'A4'};
+const options = {format: 'A4', orientation: 'portrait'};
 
 const questions = [
   {
