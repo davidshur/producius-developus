@@ -27,7 +27,7 @@ You will be prompted for your github username. After that, you'll be given four 
 
 Then, you will see confirmation that you have an HTML and PDF dev portfolio in your file system!
 
-## Credis
+## Credits
 CSS was given to us for this project by UW Coding Bootcamp.
 
 Thanks to Akhil Chandan (my Bootcamp instructor) for teaching me all this stuff!
