@@ -1,7 +1,9 @@
-# producius-developus
+# portfolio-creator
+
 Creates an HTML and PDF Developer Portfolio.
 
 ## Installation
+
 First, download Node.js from [nodejs.org](https://nodejs.org/en/download/).
 
 Then, make a copy of my repo locally.
@@ -15,6 +17,7 @@ npm install
 NOTE: Because I have saved the dependencies to package.json and my git repo, you may not need to install anything besides node.
 
 ## Usage
+
 Once you have my repo locally, simply navigate to the folder in your terminal.
 
 Then, just run the program in node.
@@ -28,11 +31,13 @@ You will be prompted for your github username. After that, you'll be given four 
 Then, you will see confirmation that you have an HTML and PDF dev portfolio in your file system!
 
 ## Credits
+
 CSS was given to us for this project by UW Coding Bootcamp.
 
 Thanks to Akhil Chandan (my Bootcamp instructor) for teaching me all this stuff!
 
 ## License
+
 Copyright 2020 David Shur
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
